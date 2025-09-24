@@ -230,6 +230,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -251,6 +253,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -870,6 +873,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -891,6 +896,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -1006,6 +1012,8 @@ ParticleSystemRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1027,6 +1035,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -8321,6 +8330,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -8342,6 +8353,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -8888,6 +8900,10 @@ PrefabInstance:
       propertyPath: m_BendingStiffness
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3902570137453822767, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3991777386509163157, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -8898,7 +8914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4515908780333402281, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_BendingStiffness
-      value: 0.1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4515908780333402281, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_ExternalAcceleration.x
@@ -8909,12 +8925,16 @@ PrefabInstance:
       value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 5161089508939875498, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_SolverFrequency
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161089508939875498, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_BendingStiffness
-      value: 0.05
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5161089508939875498, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_StretchingStiffness
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5161089508939875498, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_ExternalAcceleration.x
@@ -8941,6 +8961,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_Damping
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
@@ -8950,15 +8974,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_BendingStiffness
-      value: 0.03
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_StretchingStiffness
-      value: 0.4
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_RandomAcceleration.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_RandomAcceleration.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_ExternalAcceleration.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_ExternalAcceleration.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6011335112509497538, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_ExternalAcceleration.z
-      value: -200
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771086340431216400, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8406819350275180882, guid: 683cd3fbeae68a0458636917c1ddc4dd, type: 3}
       propertyPath: m_Name
